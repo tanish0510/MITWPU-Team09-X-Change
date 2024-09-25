@@ -1,0 +1,154 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(270deg, #00796b, #ff6f61, #00796b);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #2c3e50;
+    display: flex; /* Center elements */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height */
+}
+
+/* Container for Basket */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 15px; /* Curved corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px; /* Increased padding */
+    width: 500px; /* Increased width for a professional look */
+    margin: 20px; /* Margin for spacing */
+}
+
+/* Title Styling */
+h1 {
+    text-align: center;
+    color: #00cc99; /* Teal color for the title */
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Larger font size */
+}
+
+/* Basket Section Styling */
+.basket-section {
+    margin-top: 20px;
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Increased space between items */
+    animation: fadeIn 0.5s ease;
+    border: 1px solid #00cc99; /* Border for item */
+    border-radius: 15px; /* Curved corners */
+    padding: 15px; /* Padding inside item */
+    transition: box-shadow 0.3s; /* Transition for shadow */
+}
+
+.basket-item:hover {
+    box-shadow: 0 0 20px rgba(0, 204, 153, 0.5); /* Glow effect on hover */
+}
+
+/* Input and Select Styling */
+.currency-select, .weightage-input {
+    flex: 1;
+    padding: 12px; /* Increased padding */
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px; /* Fully rounded corners */
+    background-color: #f9f9f9; /* Light background for inputs */
+    color: #333; /* Dark text color */
+    font-size: 1em; /* Larger font size */
+    transition: box-shadow 0.3s; /* Transition for shadow */
+}
+
+.currency-select:focus, .weightage-input:focus {
+    box-shadow: 0 0 5px rgba(0, 204, 153, 0.5); /* Glow effect on focus */
+}
+
+/* Remove Button Styling */
+.remove-button {
+    background-color: #ff5252; /* Red for remove button */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Fully rounded corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added transition for shadow */
+    font-size: 1em; /* Larger font size */
+}
+
+.remove-button:hover {
+    background-color: #ff1744; /* Darker red on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Glow effect on hover */
+}
+
+/* Button Styling */
+button {
+    background-color: #00cc99; /* Teal color for buttons */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Fully rounded corners */
+    padding: 12px; /* Increased padding */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px; /* Increased margin */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for button effects */
+    font-size: 1em; /* Larger font size */
+}
+
+button:hover {
+    background-color: #009966; /* Darker teal on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Result Display */
+#basket-result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size for result display */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for Gradient Background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Adjusted width for small screens */
+        padding: 20px; /* Adjusted padding */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size for small screens */
+    }
+}
