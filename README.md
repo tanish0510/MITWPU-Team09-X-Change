@@ -112,11 +112,17 @@ Make sure to replace `https://github.com/yourusername/my-project.git` with the a
 
 ## How to run
 ->clone the repo
+
 -> cmd:01- cd northern/backend
+
 -> cmd:02- npm run
+
 -> cmd:03- node server.js
+
 **Now the backend is running and you can test it through the postman api calls.**
+
 **for frontend** (when backend is in motion)
+
 ->Run the **index.html** file on browser and navigate throught the project
 
 
