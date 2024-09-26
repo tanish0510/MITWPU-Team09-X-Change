@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SurabSebait/MITWPU-Team9-XChange/static/css/main.504504d2.css",
+    "main.js": "/SurabSebait/MITWPU-Team9-XChange/static/js/main.3ae071d7.js",
+    "static/js/453.7d99a500.chunk.js": "/SurabSebait/MITWPU-Team9-XChange/static/js/453.7d99a500.chunk.js",
+    "index.html": "/SurabSebait/MITWPU-Team9-XChange/index.html",
+    "main.504504d2.css.map": "/SurabSebait/MITWPU-Team9-XChange/static/css/main.504504d2.css.map",
+    "main.3ae071d7.js.map": "/SurabSebait/MITWPU-Team9-XChange/static/js/main.3ae071d7.js.map",
+    "453.7d99a500.chunk.js.map": "/SurabSebait/MITWPU-Team9-XChange/static/js/453.7d99a500.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.504504d2.css",
+    "static/js/main.3ae071d7.js"
+  ]
+}
