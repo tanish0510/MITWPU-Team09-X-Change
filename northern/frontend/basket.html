@@ -6,22 +6,144 @@
     <title>Basket Value Calculator</title>
     <link rel="stylesheet" href="./css/basket.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(270deg, #00796b, #ff6f61, #00796b);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+        }
+
+        /* Container for Basket */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Title Styling */
+        .animated-gradient {
+            background: linear-gradient(90deg, #00ffcc, #ff6f61);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        /* Basket Section Styling */
+        .basket-section {
+            padding: 140px;
+            background: #333;
+            margin: 60px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .form-row label {
+            margin-right: 20px;
+            width: 150px;
+        }
+
+        select, input {
+            padding: 12px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        button {
+            background-color: #00cc99;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 12px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #009966;
+            transform: scale(1.05);
+        }
+
+        #basketItems > div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        /* Animation for Gradient Background */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1 class="animated-gradient">Basket Value Calculator</h1>
-        <div class = "basket-section">
+        <div class="basket-section">
             <form id="basketForm">
-                <div class = "bform">
-                    <label >Base Currency:</label>
-                    <select class="baseCurrency" required>
+                <div class="form-row">
+                    <label for="baseCurrency">Base Currency:</label>
+                    <select id="baseCurrency" class="baseCurrency" required>
                         <option value="USD">USD</option>
                     </select>
                 </div>
                 <div id="basketItems">
-                    <div>
-                        <label for="basketItems">Basket Items:&nbsp;&nbsp;&nbsp;</label>
-
+                    <div class="form-row">
+                        <label for="basketItems">Basket Items:</label>
                         <select class="currency" required>
                             <option value="">Select Currency</option>
                             <option value="DZD">Algerian dinar (DZD)</option>
@@ -82,9 +204,8 @@
                 </div>
                 <button type="button" id="addItem">Add Item</button>
                 <button type="submit">Calculate</button>
-
             </form>
-            </div>
+        </div>
         <div id="result" class="result"></div>
     </div>
 
