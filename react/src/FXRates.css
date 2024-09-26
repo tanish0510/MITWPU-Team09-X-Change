@@ -1,0 +1,51 @@
+.fx-rates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #004080; /* Dark blue */
+  }
+  
+  input[type="file"] {
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #004080;
+    border-radius: 5px;
+    background-color: white;
+    color: #004080;
+  }
+  
+  .converted-rates {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #004080;
+  }
+  
+  th {
+    background-color: #cce6ff; /* Light blue for table headers */
+    color: #004080;
+  }
+  
+  td {
+    background-color: white;
+  }
+  
+  tr:hover {
+    background-color: #e6f2ff; /* Light blue hover effect */
+  }
+  
