@@ -148,7 +148,7 @@ Make sure to replace `https://github.com/yourusername/my-project.git` with the a
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](2A5197B5-5338-4F55-903D-D367CDD354C3.jpeg)
 
 ## Tech Stack
 
