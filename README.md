@@ -1,7 +1,7 @@
 
 # X:Change
 
-The {X:Chnage} project provides users with a powerful and dynamic interface to visualize historical exchange rates. Designed with user experience in mind, this application empowers individuals, businesses, and analysts to make informed decisions by offering insightful visualizations of currency trends.
+The **X:Change** project provides users with a powerful and dynamic interface to visualize historical exchange rates. Designed with user experience in mind, this application empowers individuals, businesses, and analysts to make informed decisions by offering insightful visualizations of currency trends.
 
 Users can effortlessly select different currencies from a wide range of options and explore exchange rate trends over various time periods, including daily, weekly, monthly, and custom ranges. This flexibility allows for a comprehensive analysis of market movements and historical performance.
 
