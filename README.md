@@ -270,6 +270,8 @@ Make sure to replace `https://github.com/yourusername/my-project.git` with the a
 
 ![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://github.com/tanish0510/MITWPU-Team09-X-Change/tree/main/northern#:~:text=Screenshot%202024%2D09%2D26%20at%2010.50.15%E2%80%AFAM.png))
 
+![App Screenshot](https://github.com/tanish0510/MITWPU-Team09-X-Change/tree/main/northern#:~:text=Screenshot%202024%2D09%2D26%20at%2010.50.55%E2%80%AFAM.png)
+
 
 
 ## Tech Stack
