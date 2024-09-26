@@ -30,6 +30,7 @@ document.getElementById('addItem').addEventListener('click', function() {
     const newItem = document.createElement('div');
     newItem.className = 'basketItem';
     newItem.innerHTML = `
+        <div>
         <select class="currency" required>
             <option value="">Select Currency</option>
             <option value="DZD">Algerian dinar (DZD)</option>
@@ -87,6 +88,7 @@ document.getElementById('addItem').addEventListener('click', function() {
         </select>
         <input type="number" class="weight" placeholder="Weight (%)" required min="0" max="100">
         <button type="button" class="deleteItem">❌</button>
+        </div>
     `;
     document.getElementById('basketItems').appendChild(newItem);
 

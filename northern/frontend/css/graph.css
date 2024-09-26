@@ -11,18 +11,18 @@ body {
     background: linear-gradient(270deg, #00796b, #ff6f61, #00796b);
     background-size: 600% 600%;
     animation: gradientAnimation 15s ease infinite;
-    color: #2c3e50;
+    color: #fff; /* Set the default body color to white */
 }
 
 /* Header Styling */
 .landing-page {
-    height: 100vh; /* Full viewport height */
+    /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -35,13 +35,25 @@ body {
 
 /* Graph Section */
 .graph-section {
-    padding: 40px;
+    padding: 100px;
     background: #333;
-    margin: 20px auto;
-    border-radius: 5px;
+    margin: 40px 40px;
+    border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-    max-width: 800px;
-    color: #fff;
+    max-width: 800px ;
+    display: flex; /* Use flexbox to arrange elements horizontally */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.graph-section div {
+    /* ... other styles */
+    flex: 1; /* Ensure both divs take up equal space */
+    margin-bottom: 10px;
+}
+button {
+    /* ... other styles */
+    align-self: center; /* Center the button within its parent container */
 }
 
 input, select, button {
@@ -49,6 +61,7 @@ input, select, button {
     margin: 5px;
     border: none;
     border-radius: 5px;
+    align-items: center;
 }
 
 button {
@@ -56,6 +69,7 @@ button {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    align-items: center;
 }
 
 button:hover {
@@ -76,7 +90,7 @@ button:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .landing-page {
         padding: 10px;
     }

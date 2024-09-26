@@ -20,7 +20,13 @@ async function fetchExchangeRates(currency, period, startDate = null, endDate = 
 }
 
 async function renderChart(currency, period, startDate, endDate) {
+    // Disable button during data fetch
+    document.getElementById('fetch-rates').disabled = true;
+
     const rates = await fetchExchangeRates(currency, period, startDate, endDate);
+
+    // Re-enable button
+    document.getElementById('fetch-rates').disabled = false;
 
     if (rates.length === 0) {
         console.error('No rates available to render the chart.');
@@ -52,24 +58,19 @@ async function renderChart(currency, period, startDate, endDate) {
 
     const { volatility, riskLevels } = calculateVolatilityAndRisk(data);
 
-    // Create an array of line colors based on risk levels
-    const lineColors = [];
-    for (let i = 1; i < data.length; i++) {
-        if (riskLevels[i - 1] === 'Low') {
-            lineColors.push('rgba(75, 192, 192, 1)'); // Green for Low risk
-        } else if (riskLevels[i - 1] === 'Medium') {
-            lineColors.push('rgba(255, 206, 86, 1)'); // Yellow for Medium risk
-        } else {
-            lineColors.push('rgba(255, 99, 132, 1)'); // Red for High risk
-        }
+    // Create gradient colors for each point in the dataset
+    const getColorBasedOnRisk = (risk) => {
+        if (risk === 'Low') return 'rgba(75, 192, 192, 1)'; // Green
+        if (risk === 'Medium') return 'rgba(255, 206, 86, 1)'; // Yellow
+        return 'rgba(255, 99, 132, 1)'; // Red
+    };
+
+    // Destroy existing chart if it exists
+    if (window.myChart) {
+        window.myChart.destroy();
     }
 
     const ctx = document.getElementById('exchangeRateChart').getContext('2d');
-
-    if (window.myChart) {
-        window.myChart.destroy(); // Clear previous chart if it exists
-    }
-
     window.myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -77,11 +78,14 @@ async function renderChart(currency, period, startDate, endDate) {
             datasets: [{
                 label: `Exchange Rate (${currency})`,
                 data: data,
-                borderColor: lineColors, // Apply colors based on risk levels
+                borderColor: (ctx) => {
+                    const index = ctx.p0DataIndex;
+                    return getColorBasedOnRisk(riskLevels[index] || 'Low');
+                },
                 borderWidth: 2,
                 fill: false,
                 tension: 0.1,
-                pointBackgroundColor: lineColors // Point colors also based on risk
+                pointBackgroundColor: data.map((_, i) => getColorBasedOnRisk(riskLevels[i - 1] || 'Low')) // Point colors based on risk
             }]
         },
         options: {
@@ -90,7 +94,7 @@ async function renderChart(currency, period, startDate, endDate) {
                 tooltip: {
                     callbacks: {
                         label: function(tooltipItem) {
-                            const risk = riskLevels[tooltipItem.dataIndex - 1];
+                            const risk = riskLevels[tooltipItem.dataIndex - 1] || 'Low';
                             return `Rate: ${tooltipItem.raw}, Risk: ${risk}`;
                         }
                     }
@@ -100,13 +104,21 @@ async function renderChart(currency, period, startDate, endDate) {
                 x: {
                     title: {
                         display: true,
-                        text: 'Date'
+                        text: 'Date',
+                        color: '#fff' // Set the X-axis title color to white
+                    },
+                    ticks: {
+                        color: '#fff' // Set the X-axis value color to white
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Exchange Rate'
+                        text: 'Exchange Rate',
+                        color: '#fff' // Set the Y-axis title color to white
+                    },
+                    ticks: {
+                        color: '#fff' // Set the Y-axis value color to white
                     }
                 }
             }
@@ -114,6 +126,7 @@ async function renderChart(currency, period, startDate, endDate) {
     });
 }
 
+// Toggle custom date inputs visibility
 document.getElementById('period').addEventListener('change', function() {
     const customDates = document.getElementById('custom-dates');
     if (this.value === 'custom') {
@@ -123,6 +136,7 @@ document.getElementById('period').addEventListener('change', function() {
     }
 });
 
+// Fetch and render the chart on button click
 document.getElementById('fetch-rates').addEventListener('click', function() {
     const currency = document.getElementById('currency').value;
     const period = document.getElementById('period').value;

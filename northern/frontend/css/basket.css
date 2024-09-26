@@ -11,36 +11,50 @@ body {
     background: linear-gradient(270deg, #00796b, #ff6f61, #00796b);
     background-size: 600% 600%;
     animation: gradientAnimation 15s ease infinite;
-    color: #2c3e50;
-    display: flex; /* Center elements */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Full height */
+    color: #fff; /* Set the default body color to white */
 }
 
 /* Container for Basket */
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    border-radius: 15px; /* Curved corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    padding: 30px; /* Increased padding */
-    width: 500px; /* Increased width for a professional look */
-    margin: 20px; /* Margin for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Title Styling */
-h1 {
-    text-align: center;
-    color: #00cc99; /* Teal color for the title */
-    margin-bottom: 20px;
-    font-size: 1.8em; /* Larger font size */
+.animated-gradient {
+    background: linear-gradient(90deg, #00ffcc, #ff6f61);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 10s ease infinite;
 }
 
 /* Basket Section Styling */
 .basket-section {
-    margin-top: 20px;
+     padding: 140px;
+    background: #333;
+    margin: 60px 60px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    max-width: 700px ;
+    display: flex; /* Use flexbox to arrange elements horizontally */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
-
+.bform {
+    margin-bottom: 20px; /* Add spacing between elements */
+}
+.basket-section div {
+    /* ... other styles */
+    flex: 1; /* Ensure both divs take up equal space */
+    margin-bottom: 10px;
+    align-self: start;
+}
 .basket-item {
     display: flex;
     align-items: center;
@@ -51,7 +65,9 @@ h1 {
     padding: 15px; /* Padding inside item */
     transition: box-shadow 0.3s; /* Transition for shadow */
 }
-
+.currency-select, .weightage-input, .remove-button {
+    margin-right: 10px; /* Add spacing between elements */
+}
 .basket-item:hover {
     box-shadow: 0 0 20px rgba(0, 204, 153, 0.5); /* Glow effect on hover */
 }
@@ -89,6 +105,13 @@ h1 {
     background-color: #ff1744; /* Darker red on hover */
     transform: scale(1.05); /* Scale effect on hover */
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Glow effect on hover */
+}
+input, select, button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
 }
 
 /* Button Styling */
