@@ -1,0 +1,127 @@
+/* FX Section Styling */
+.fx-section {
+    padding: 100px;
+    background: #333;
+    margin: 40px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.fx-section h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.fx-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.fx-section label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ff6f61;
+    align-self: flex-start;
+}
+
+.fx-section input,
+.fx-section select,
+.fx-section button {
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+}
+
+.fx-section input,
+.fx-section select {
+    background-color: #444;
+    color: #fff;
+}
+
+.fx-section input::placeholder {
+    color: #ccc;
+}
+
+.fx-section button {
+    background-color: #00cc99;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: auto;
+}
+
+.fx-section button:hover {
+    background-color: #009966;
+    transform: scale(1.05);
+}
+
+/* FX Result Display */
+#fxResult {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    color: #00ffcc;
+}
+
+#fxResult h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#fxResult ul {
+    list-style: none;
+    padding: 0;
+}
+
+#fxResult li {
+    font-size: 18px;
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+#fxResult li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design for FX Section */
+@media (max-width: 800px) {
+    .fx-section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .fx-section form {
+        max-width: 100%;
+    }
+
+    #fxResult {
+        padding: 15px;
+    }
+
+    #fxResult h3 {
+        font-size: 20px;
+    }
+
+    #fxResult li {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fx.css">
+    <title>FX Rates</title>
+</head>
+<body>
+    <header class="landing-page">
+        <h1 class="animated-gradient">FX:Change</h1>
+        <p class="subheading">Get Exchange Rates for any Date and Currency</p>
+    </header>
+
+    <main>
+        <section class="fx-section">
+            <h2>Check Foreign Exchange Rates</h2>
+            <form id="fxForm">
+                <label for="currency">Base Currency (e.g. USD, EUR):</label>
+                <input type="text" id="currency" name="currency" required>
+
+                <label for="date">Select Date (YYYY-MM-DD):</label>
+                <input type="date" id="date" name="date" required>
+
+                <button type="submit">Get Rates</button>
+            </form>
+
+            <div id="fxResult">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Application</p>
+    </footer>
+
+    <script src="js/fx.js"></script>
+</body>
+</html>

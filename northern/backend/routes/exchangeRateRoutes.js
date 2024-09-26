@@ -1,6 +1,7 @@
 const express = require('express');
 const { getExchangeRates, getMinMaxRates } = require('../controllers/exchangeRateController');
 const { calculateBasketValue } = require('../controllers/currencyBasketController');
+const { calculateFxTokens } = require('../controllers/fxController');
 const router = express.Router();
 
 // Route to fetch exchange rates based on currency and duration
@@ -10,6 +11,7 @@ router.get('/:currency/:period', getExchangeRates);
 router.get('/:currency', getMinMaxRates);
 
 router.post('/basket', calculateBasketValue); // Add the new route
+router.get('/fx/:currency/:date', calculateFxTokens);
 
 module.exports = router;
 
